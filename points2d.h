@@ -45,9 +45,11 @@ class Points2D {
 
 
     Points2D& operator=(const Points2D &rhs){
-        if(this != &rhs){
-            *sequence_ = *rhs.sequence_;
+        if(*this != &rhs){
+            sequence_ = rhs.sequence_;
+            size_ = rhs.size_;
         }
+
         return *this; 
     }
 

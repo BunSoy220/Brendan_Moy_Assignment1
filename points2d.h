@@ -77,10 +77,15 @@ class Points2D {
     Points2D(const std::array<Object, 2>& item) {
         sequence_ = new std::array<Object,2>{item};
         size_t i = 0 ;
-        while((&(sequence_[i][1]) != &(sequence_->back()))) {
-            ++i;
+        if(item.empty()){
+            size_ = 0;
+        }else{
+            while((&(sequence_[i][1]) != &(sequence_->back()))) {
+                ++i;
+            }
+            size_ = i+1;
         }
-        size_ = i+1;
+
     }
 
     size_t size() const {
@@ -146,21 +151,13 @@ class Points2D {
             for(size_t j = 0; j < 2; ++j){
                 while(std::cin.peek() == ' ') std::getchar();
                 if(std::cin.peek() == '\n'){
-                    if(j == 0) some_points.size_ = i;
-                    else some_points.size_ = i+1;
-                    break;  
+                    std::cerr << "Error: invalid input length ";
                 }else
-                  in >> some_points.sequence_[i][j];
-                /**
-                 *        
-                if(std::cin.peek() == 13){
-                    if(j == 1) some_points.size_ = i;
-                    else some_points.size_ = i+1;  
-                    break;  
-                }
-                */
-                
+                  in >> some_points.sequence_[i][j];   
             }
+        }
+        if(some_points.sequence_->empty()){ 
+            some_points.size_ = 0;
         }
         return in;
     }

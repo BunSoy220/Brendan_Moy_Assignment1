@@ -152,7 +152,7 @@ class Points2D {
                 while(std::cin.peek() == ' ') std::getchar();
                 if(std::cin.peek() == '\n'){
                     std::cerr << "ERROR";
-                    abort();
+                    std::abort();
                 }else
                   in >> some_points.sequence_[i][j];   
             }

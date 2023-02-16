@@ -46,7 +46,7 @@ class Points2D {
 
     Points2D& operator=(const Points2D &rhs){
         if(this != &rhs){
-            Points2D copy = rhs;
+            Points2D copy_ = rhs;
             std::swap(*this, copy);
         }
 
@@ -103,22 +103,22 @@ class Points2D {
     //  @return their sum. If the sequences are not of the same size, append the
     //    result with the remaining part of the larger sequence.
     friend Points2D operator+(const Points2D &c1, const Points2D &c2) {
-        Points2D biggest = (c1.size_>c2.size_)?c1:c2;
-        Points2D smallest = (c1.size_<c2.size_)?c1:c2;
-        std::array<Object,2> *sum = new std::array<Object,2>[biggest.size_];
-         for(size_t i = 0; i < biggest.size_; ++i){
+        Points2D biggest_ = (c1.size_>c2.size_)?c1:c2;
+        Points2D smallest_ = (c1.size_<=c2.size_)?c1:c2;
+        std::array<Object,2> *sum_ = new std::array<Object,2>[biggest_.size_];
+         for(size_t i = 0; i < biggest_.size_; ++i){
             for(size_t j = 0; j < 2; ++j){
-                if(smallest.size_ > i)
-                    sum[i][j] = biggest.sequence_[i][j] + smallest.sequence_[i][j];
+                if(smallest_.size_ > i)
+                    sum_[i][j] = biggest_.sequence_[i][j] + smallest_.sequence_[i][j];
                 else
-                    sum[i][j] = biggest.sequence_[i][j];
+                    sum_[i][j] = biggest_.sequence_[i][j];
             }
          }
-        Points2D result = Points2D();
-        result.size_ = biggest.size_;
-        result.sequence_ = sum;
+        Points2D result_ = Points2D();
+        result_.size_ = biggest_.size_;
+        result_.sequence_ = sum_;
        
-        return result;
+        return result_;
     }
     
     // Overloading the << operator.
@@ -139,9 +139,9 @@ class Points2D {
     // Read a chain from an input stream (e.g., standard input).
     friend std::istream &operator>>(std::istream &in, Points2D &some_points) {
         in >> some_points.size_;
-        std::array<Object, 2> *temp = some_points.sequence_;
+        std::array<Object, 2> *temp_ = some_points.sequence_;
         some_points.sequence_ = new std::array<Object, 2>[some_points.size_];
-        delete[] temp; 
+        delete[] temp_; 
         for(size_t i = 0; i <some_points.size_; ++i){
             for(size_t j = 0; j < 2; ++j){
                 while(std::cin.peek() == ' ') std::getchar();

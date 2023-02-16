@@ -46,11 +46,11 @@ class Points2D {
 
     Points2D& operator=(const Points2D &rhs){
         if(this != &rhs){
-            *sequence_ = *rhs.sequence_;
-            size_ = rhs.size_;
+            Points2D copy = rhs;
+            std::swap(*this, copy);
         }
 
-        return *this; 
+        return *this;
     }
 
     // Move-constructor.

@@ -146,7 +146,8 @@ class Points2D {
             for(size_t j = 0; j < 2; ++j){
                 while(std::cin.peek() == ' ') std::getchar();
                 if(std::cin.peek() == '\n'){
-                    some_points.size_ = i+1;
+                    if(j == 0) some_points.size = i;
+                    else some_points.size_ = i+1;
                     break;  
                 }else
                   in >> some_points.sequence_[i][j];

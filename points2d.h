@@ -160,6 +160,7 @@ class Points2D {
         if(some_points.sequence_->empty()){ 
             some_points.size_ = 0;
         }
+        std::cout << "\n";
         return in;
     }
     

@@ -145,15 +145,17 @@ class Points2D {
         for(size_t i = 0; i <some_points.size_; ++i){
             for(size_t j = 0; j < 2; ++j){
                 in >> some_points.sequence_[i][j];
-                if(std::cin.peek() != 32){
+                std::cout << "next is ("  << i << j << ") "<< std::getchar() << std::cin.peek() << " " << "\n";
+
+                /**
+                 *        
+                if(std::cin.peek() == 13){
                     if(j == 1) some_points.size_ = i;
                     else some_points.size_ = i+1;  
                     break;  
                 }
-                /**
-                std::cin.clear();
-                std::cout << "next is ("  << i << j << ") "<< std::cin.peek() << "\n";
                 */
+                
             }
         }
         return in;

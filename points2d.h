@@ -137,13 +137,11 @@ class Points2D {
     // Read a chain from an input stream (e.g., standard input).
     friend std::istream &operator>>(std::istream &in, Points2D &some_points) {
         in >> some_points.size_;
-        in.clear();
         std::array<Object, 2> *temp = some_points.sequence_;
         some_points.sequence_ = new std::array<Object, 2>[some_points.size_];
         delete[] temp; 
         for(size_t i = 0; i <some_points.size_; ++i){
             for(size_t j = 0; j < 2; ++j){
-                in.clear();
                 in >> some_points.sequence_[i][j];
             }
         }

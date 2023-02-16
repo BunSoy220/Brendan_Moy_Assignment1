@@ -75,9 +75,9 @@ class Points2D {
     Points2D(const std::array<Object, 2>& item) {
         sequence_ = new std::array<Object,2>{item};
         int i = 0 ;
-        try {
+        while((&(sequence_[i][1]) != &(sequence_->back()))) {
             ++i;
-        }while((&(sequence_[i][1]) != &(sequence_->back())));
+        }
         size_ = i+1;
     }
 

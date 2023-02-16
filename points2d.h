@@ -144,14 +144,14 @@ class Points2D {
         delete[] temp; 
         for(size_t i = 0; i <some_points.size_; ++i){
             for(size_t j = 0; j < 2; ++j){
-                in >> some_points.sequence_[i][j];
                 while(std::cin.peek() == ' ') std::getchar();
                 if(std::cin.peek() == '\n'){
                     if(j == 1 && i != some_points.size()-1) some_points.size_ = i+1;
                     else if(j == 1) some_points.size_ = i;
                     else some_points.size_ = i+1;  
                     break;  
-                }
+                }else
+                  in >> some_points.sequence_[i][j];
                 /**
                  *        
                 if(std::cin.peek() == 13){

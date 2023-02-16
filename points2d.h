@@ -129,13 +129,13 @@ class Points2D {
     // Overloading the << operator.
     friend std::ostream &operator<<(std::ostream &out, const Points2D &some_points) {
         if(some_points.size_ == 0){
-            out << "()\n";
+            out << "()" <<std::endl;
         }
         else{
             for(size_t i = 0; i < some_points.size_; ++i){
                 out << "(" << some_points.sequence_[i][0] << ", " << some_points.sequence_[i][1]  << ")";
             }
-             out << "\n";
+             out << std::endl;
         }
         return out;
     }   
@@ -151,7 +151,7 @@ class Points2D {
             for(size_t j = 0; j < 2; ++j){
                 while(std::cin.peek() == ' ') std::getchar();
                 if(std::cin.peek() == '\n'){
-                    std::cerr << "Error: invalid input length ";
+                    std::cerr << "ERROR";
                     abort();
                 }else
                   in >> some_points.sequence_[i][j];   
@@ -160,7 +160,7 @@ class Points2D {
         if(some_points.sequence_->empty()){ 
             some_points.size_ = 0;
         }
-        std::cout << "\n";
+        std::cout << std::endl;
         return in;
     }
     

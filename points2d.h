@@ -126,7 +126,7 @@ class Points2D {
         }
         else{
             for(size_t i = 0; i < some_points.size_; ++i){
-                out << "(" << some_points.sequence_[i][0] << ", " << some_points.sequence_[i][1]  << ") ";
+                out << "(" << some_points.sequence_[i][0] << ", " << some_points.sequence_[i][1]  << ")";
             }
              out << "\n";
         }
@@ -145,6 +145,7 @@ class Points2D {
                 in >> some_points.sequence_[i][j];
             }
         }
+        
         return in;
     }
     

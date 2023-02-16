@@ -133,7 +133,7 @@ class Points2D {
         }
         else{
             for(size_t i = 0; i < some_points.size_; ++i){
-                out << "(" << some_points.sequence_[i][0] << ", " << some_points.sequence_[i][1]  << ")";
+                out << "(" << some_points.sequence_[i][0] << ", " << some_points.sequence_[i][1]  << ") ";
             }
              out << std::endl;
         }
@@ -150,7 +150,7 @@ class Points2D {
         for(size_t i = 0; i <some_points.size_; ++i){
             for(size_t j = 0; j < 2; ++j){
                 while(std::cin.peek() == ' ') std::getchar();
-                if(std::cin.peek() == '\n'){
+                if(std::cin.peek() == EOF){
                     std::cerr << "ERROR";
                     std::abort();
                 }else

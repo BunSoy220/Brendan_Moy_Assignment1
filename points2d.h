@@ -32,8 +32,8 @@ class Points2D {
     Points2D(const Points2D &rhs){
         size_ = rhs.size_;
         sequence_ = new std::array<Object, 2> [rhs.size_];
-        for(int i = 0; i < rhs.size_; ++i){
-            for(int j = 0; j < 2; ++j){
+        for(size_t i = 0; i < rhs.size_; ++i){
+            for(size_t j = 0; j < 2; ++j){
                 sequence_[i][j] = rhs.sequence_[i][j];
            }
         }
@@ -74,7 +74,7 @@ class Points2D {
     // One parameter constructor.
     Points2D(const std::array<Object, 2>& item) {
         sequence_ = new std::array<Object,2>{item};
-        int i = 0 ;
+        size_t i = 0 ;
         while((&(sequence_[i][1]) != &(sequence_->back()))) {
             ++i;
         }
@@ -104,8 +104,8 @@ class Points2D {
         Points2D biggest = (c1.size_>c2.size_)?c1:c2;
         Points2D smallest = (c1.size_<c2.size_)?c1:c2;
         std::array<Object,2> *sum = new std::array<Object,2>[biggest.size_];
-         for(int i = 0; i < biggest.size_; ++i){
-            for(int j = 0; j < 2; ++j){
+         for(size_t i = 0; i < biggest.size_; ++i){
+            for(size_t j = 0; j < 2; ++j){
                 if(smallest.size_ > i)
                     sum[i][j] = biggest.sequence_[i][j] + smallest.sequence_[i][j];
                 else
@@ -125,7 +125,7 @@ class Points2D {
             out << "()\n";
         }
         else{
-            for(int i = 0; i < some_points.size_; ++i){
+            for(size_t i = 0; i < some_points.size_; ++i){
                 out << "(" << some_points.sequence_[i][0] << ", " << some_points.sequence_[i][1]  << ") ";
             }
              out << "\n";
@@ -141,8 +141,8 @@ class Points2D {
         std::array<Object, 2> *temp = some_points.sequence_;
         some_points.sequence_ = new std::array<Object, 2>[some_points.size_];
         delete[] temp; 
-        for(int i = 0; i <some_points.size_; ++i){
-            for(int j = 0; j < 2; ++j){
+        for(size_t i = 0; i <some_points.size_; ++i){
+            for(size_t j = 0; j < 2; ++j){
                 in.clear();
                 in >> some_points.sequence_[i][j];
             }

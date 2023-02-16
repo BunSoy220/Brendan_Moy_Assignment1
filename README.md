@@ -5,7 +5,7 @@ zero parameter constructor
 makes an empty sequence_ with size_ 0
 
 #### Points2D(const Points2d &rhs) 
-copy constructor \n
+copy constructor
 makes a seperate copy of all elements in rhs's sequence_ including size_
 
 #### Points2D operator=(const Points2D &rhs)
@@ -44,4 +44,3 @@ overloads std::cout >>
 prints all points in sequence with format: "(x,y) ...(x(n),y(n))"
 if there are no points in the sequence it prints: "()"
 
-####

@@ -47,7 +47,7 @@ class Points2D {
     Points2D& operator=(const Points2D &rhs){
         if(this != &rhs){
             Points2D copy_ = rhs;
-            std::swap(*this, copy);
+            std::swap(*this, copy_);
         }
 
         return *this;

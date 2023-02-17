@@ -73,7 +73,6 @@ class Points2D {
     //makes all makes new sequence from array item using a one parameter constructor
     Points2D(const std::array<Object, 2>& item) {
         sequence_ = new std::array<Object,2>{item};
-        size_t i = 0 ;
         if(item.empty()){
             size_ = 0;
         }else{
